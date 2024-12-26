@@ -8,7 +8,7 @@
         body {
             margin: 0;
             font-family: 'Arial', sans-serif;
-            background: url('https://images.unsplash.com/photo-1600431528930-63c667a8f8f1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080') no-repeat center center fixed;
+            background: url('https://images.unsplash.com/photo-1608136878706-aed2c3a67df3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080') no-repeat center center fixed;
             background-size: cover;
             color: #fff;
         }
@@ -16,7 +16,7 @@
         .container {
             text-align: center;
             padding: 20px;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.6);
             border-radius: 15px;
             max-width: 90%;
             margin: 50px auto;
@@ -26,7 +26,7 @@
             font-size: 2.5em;
             margin-bottom: 20px;
             font-weight: bold;
-            color: #ffdd99;
+            color: #ffcc66;
         }
 
         ul {
@@ -55,7 +55,7 @@
         }
 
         a:hover {
-            color: #ffdd99;
+            color: #ffcc66;
         }
 
         .phone {
@@ -63,18 +63,38 @@
             font-size: 1.2em;
             font-weight: bold;
         }
+
+        /* Адаптация для мобильных устройств */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            li {
+                font-size: 1em;
+            }
+
+            li img {
+                width: 25px;
+                height: 25px;
+            }
+
+            .phone {
+                font-size: 1em;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Имбирные пряники, мои контакты:</h1>
+        <h1>Имбирные пряники на заказ:</h1>
         <ul>
             <li>
                 <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram">
                 <a href="https://t.me/imbirchik34" target="_blank">Телеграм</a>
             </li>
             <li>
-                <img src="https://cdn-icons-png.flaticon.com/512/2111/2111710.png" alt="VK">
+                <img src="https://cdn-icons-png.flaticon.com/512/145/145813.png" alt="VK">
                 <a href="https://vk.com/imbirchik34ru" target="_blank">ВКонтакте</a>
             </li>
             <li>
@@ -87,7 +107,7 @@
             </li>
         </ul>
         <div class="phone">
-            Номер телефона: <a href="tel:+79950304625">+7-995-030-46-25</a>
+            Номер телефона: <a href="tel:+79950304625">+7 995 030 46 25</a>
         </div>
     </div>
 </body>
