@@ -14,7 +14,7 @@ visits = {
 
 @app.route('/')
 def index():
-    return send_from_directory('index.html')
+    return send_from_directory(os.getcwd(), 'index.html')
 
 # Эндпоинт для увеличения количества переходов
 @app.route('/increment', methods=['POST'])
