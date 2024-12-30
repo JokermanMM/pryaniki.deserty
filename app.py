@@ -13,8 +13,8 @@ visits = {
 }
 
 @app.route('/')
-def home():
-    return "Сервер работает!"
+def index():
+    return send_from_directory('static', 'index.html')
 
 # Эндпоинт для увеличения количества переходов
 @app.route('/increment', methods=['POST'])
