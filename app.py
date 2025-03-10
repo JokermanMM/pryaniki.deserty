@@ -34,6 +34,10 @@ def reset():
     visits = {key: 0 for key in visits}  # Сбрасываем все счётчики
     return jsonify({"message": "Статистика сброшена!"}), 200
 
+@app.route('/statistics', methods=['GET'])
+def get_statistics():
+    return jsonify(visits), 200
+
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)
