@@ -1,23 +1,18 @@
-import redis
-
-from flask import Flask, request, jsonify, send_from_directory
 import os
+import redis
+from flask import Flask, request, jsonify, send_from_directory
 
 app = Flask(__name__)
 
-# Статистика переходов
-visits = {
-    "main": 0,
-    "telegram": 0,
-    "vk": 0,
-    "instagram": 0,
-    "whatsapp": 0
-}
+# Подключение к Redis через полный URL
+redis_url = os.getenv("REDIS_URL", "redis://localhost:6379")
+r = redis.Redis.from_url(redis_url, decode_responses=True)
 
-# Подключаемся к Redis
-r = redis.Redis(host=os.getenv('REDIS_HOST', 'imbirchik.onrender.com'), port=os.getenv('REDIS_PORT', 6379))
+@app.route('/')
+def index():
+    return send_from_directory(os.getcwd(), 'index.html')
 
-# Функция для увеличения статистики
+# Эндпоинт для увеличения статистики
 @app.route('/increment', methods=['POST'])
 def increment():
     data = request.get_json()
@@ -29,19 +24,22 @@ def increment():
     else:
         return jsonify({"message": "Неизвестный эндпоинт!"}), 400
 
-# Функция для получения статистики
-def get_visits():
-    visits = {key: int(r.get(key) or 0) for key in ["main", "telegram", "vk", "instagram", "whatsapp"]}
-    return visits
-
+# Получение статистики
 @app.route('/statistics', methods=['GET'])
 def statistics():
     return jsonify(get_visits()), 200
 
-@app.route('/')
-def index():
-    return send_from_directory(os.getcwd(), 'index.html')
+# Сброс статистики
+@app.route('/reset', methods=['POST'])
+def reset():
+    r.flushdb()  # Полный сброс базы Redisa
+    return jsonify({"message": "Статистика сброшена!"}), 200
 
-if __name__ == '__main__':
+# Функция для получения всех значений из Redis
+def get_visits():
+    keys = r.keys()  # Получаем все ключи из Redis
+    return {key: int(r.get(key) or 0) for key in keys}
+
+if name == '__main__':
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)
