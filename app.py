@@ -13,7 +13,7 @@ visits = {
 }
 
 # Подключаемся к Redis
-r = redis.Redis(host=os.getenv('REDIS_HOST'), port=os.getenv('REDIS_PORT'))
+r = redis.Redis(host=os.getenv('REDIS_HOST', 'imbirchik.onrender.com'), port=os.getenv('REDIS_PORT', 6379))
 
 # Функция для увеличения статистики
 @app.route('/increment', methods=['POST'])
