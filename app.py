@@ -5,7 +5,7 @@ from flask import Flask, request, jsonify, send_from_directory
 app = Flask(__name__)
 
 # Подключение к Redis через полный URL
-redis_url = os.getenv("REDIS_URL", "redis://localhost:6379")
+redis_url = os.getenv("REDIS_URL", "redis://red-cv7bmh23esus73ed5tpg:6379")
 r = redis.Redis.from_url(redis_url, decode_responses=True)
 
 @app.route('/')
