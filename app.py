@@ -1,4 +1,5 @@
-from flask import Flask, request, jsonify, send_from_directory, redis
+from flask import Flask, request, jsonify, send_from_directory
+import redis
 import os
 
 app = Flask(__name__)
