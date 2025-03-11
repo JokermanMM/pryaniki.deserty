@@ -20,6 +20,7 @@ def increment():
 
     if name:
         r.incr(name)  # Увеличиваем счётчик в Redis
+        r.incr("main") # Увеличиваем общий счётчик
         return jsonify({"message": f"Переход на {name} увеличен!", "visits": get_visits()}), 200
     else:
         return jsonify({"message": "Неизвестный эндпоинт!"}), 400
