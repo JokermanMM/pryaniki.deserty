@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Админ — Статистика</title>
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Outfit:wght@600;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="static/css/admin.css">
+</head>
+<body>
+
+    <header class="admin-header">
+        <h1 class="admin-header__title">📊 Статистика</h1>
+        <p class="admin-header__subtitle">Панель администратора</p>
+    </header>
+
+    <!-- Total visits -->
+    <div class="stat-card--total">
+        <div class="stat-label">Всего просмотров страницы</div>
+        <div class="stat-value" id="total-visits">—</div>
+    </div>
+
+    <!-- Stats cards -->
+    <div class="stats-grid" id="stats-container">
+        <p class="loading">Загрузка...</p>
+    </div>
+
+    <!-- Actions -->
+    <div class="admin-actions">
+        <button class="btn" onclick="loadStats()">🔄 Обновить</button>
+        <button class="btn btn--danger" onclick="resetStats()">🗑 Сбросить</button>
+    </div>
+
+    <!-- Scripts -->
+    <script src="static/js/admin.js"></script>
+</body>
+</html>

@@ -3,159 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Имбирные пряники</title>
+    <title>Пряники & Десерты — Контакты</title>
+    <meta name="description" content="Имбирные пряники и десерты ручной работы. Свяжитесь с нами через Telegram, Instagram, WhatsApp или закажите на Flowwow.">
 
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Arial', sans-serif;
-            background: url('https://images.vexels.com/media/users/3/72747/raw/3e38b69b3ce091476929e2801637bc50-red-3d-baubles-hanging-on-snowflakes-background.jpg') no-repeat center center fixed;
-            background-size: cover;
-            color: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Outfit:wght@600;700&display=swap" rel="stylesheet">
 
-        .container {
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.6);
-            border-radius: 15px;
-            max-width: 400px;
-            width: 90%;
-            text-align: center;
-        }
-
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            font-weight: bold;
-            color: #ffcc66;
-        }
-
-        ul {
-            list-style: none;
-            padding: 0;
-            margin: 0 auto;
-            display: inline-block;
-            text-align: left;
-        }
-
-        li {
-            font-size: 1.2em;
-            margin: 15px 0;
-            display: flex;
-            align-items: center;
-        }
-
-        li img {
-            width: 30px;
-            height: 30px;
-            margin-right: 15px;
-        }
-
-        a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        a:hover {
-            color: #ffcc66;
-        }
-
-        .phone {
-            margin-top: 20px;
-            font-size: 1.2em;
-            font-weight: bold;
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2em;
-            }
-
-            li {
-                font-size: 1em;
-            }
-
-            li img {
-                width: 25px;
-                height: 25px;
-            }
-
-            .phone {
-                font-size: 1em;
-            }
-        }
-    </style>
+    <!-- Styles -->
+    <link rel="stylesheet" href="static/css/style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Наши контакты:</h1>
-        <ul>
-            <li>
-                <img src="https://cdn-icons-png.flaticon.com/128/10343/10343538.png" alt="Flowwow">
-                <a href="https://flowwow.com/shop/pryaniki-deserty" target="_blank" 
-                   onclick="incrementVisit('Flowwow'); gtag('event', 'click', { 'event_category': 'Flowwow', 'event_label': 'Flowwow Link' });">
-                   Flowwow
-                </a>
-            </li>
-            <li>
-                <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram">
-                <a href="https://t.me/pryanikideserty" target="_blank" 
-                   onclick="incrementVisit('telegram'); gtag('event', 'click', { 'event_category': 'Telegram', 'event_label': 'Telegram Link' });">
-                   Телеграм
-                </a>
-            </li>
-            <li>
-                <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
-                <a href="https://www.instagram.com/pryaniki.deserty/" target="_blank" 
-                   onclick="incrementVisit('instagram'); gtag('event', 'click', { 'event_category': 'Instagram', 'event_label': 'Instagram Link' });">
-                   Instagram
-                </a>
-            </li>
-            <li>
-                <img src="https://cdn-icons-png.flaticon.com/512/5968/5968835.png" alt="VK">
-                <a href="https://vk.com/pryanikideserty" target="_blank"
-                    onclick="incrementVisit('vk'); gtag('event', 'click', { 'event_category': 'VK', 'event_label': 'VK Link' });">
-                    ВКонтакте
-                </a>
-            </li>
-            <li>
-                <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
-                <a href="https://wa.me/+79950304625" target="_blank" 
-                   onclick="incrementVisit('whatsapp'); gtag('event', 'click', { 'event_category': 'WhatsApp', 'event_label': 'WhatsApp Link' });">
-                   WhatsApp
-                </a>
-            </li>
-        </ul>
-        <div class="phone">
-            Номер телефона: <a href="tel:+79950304625" 
-                               onclick="gtag('event', 'click', { 'event_category': 'Phone', 'event_label': 'Phone Link' });">
-                               +7 995 030 46 25
+
+    <!-- Ambient Background -->
+    <div class="bg-particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+    <div class="glow-orb glow-orb--1"></div>
+    <div class="glow-orb glow-orb--2"></div>
+    <div class="glow-orb glow-orb--3"></div>
+
+    <!-- Main Content -->
+    <div class="main-wrapper">
+
+        <!-- Hero -->
+        <header class="hero">
+            <div class="hero__icon">🍪</div>
+            <h1 class="hero__title">Пряники & Десерты</h1>
+            <p class="hero__subtitle">Сладкие подарки ручной работы</p>
+        </header>
+
+        <!-- Contact Cards -->
+        <div class="contacts-grid">
+
+            <!-- Flowwow -->
+            <a href="https://flowwow.com/shop/pryaniki-deserty" target="_blank" rel="noopener"
+               class="contact-card" id="link-flowwow"
+               onclick="incrementVisit('Flowwow')">
+                <div class="contact-card__icon contact-card__icon--flowwow">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" fill="#FF6B6B"/>
+                    </svg>
+                </div>
+                <div class="contact-card__info">
+                    <span class="contact-card__name">Flowwow</span>
+                    <span class="contact-card__label">Магазин подарков</span>
+                </div>
+                <span class="contact-card__arrow">→</span>
+            </a>
+
+            <!-- Telegram -->
+            <a href="https://t.me/pryanikideserty" target="_blank" rel="noopener"
+               class="contact-card" id="link-telegram"
+               onclick="incrementVisit('telegram')">
+                <div class="contact-card__icon contact-card__icon--telegram">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.03-1.98 1.26-5.59 3.7-.53.36-1.01.54-1.43.53-.47-.01-1.38-.27-2.05-.49-.83-.27-1.49-.42-1.43-.88.03-.24.37-.49 1.02-.74 3.98-1.73 6.64-2.88 7.97-3.43 3.79-1.58 4.58-1.86 5.09-1.87.11 0 .37.03.54.17.14.12.18.28.2.45-.01.06.01.24 0 .37z" fill="#26A6DE"/>
+                    </svg>
+                </div>
+                <div class="contact-card__info">
+                    <span class="contact-card__name">Телеграм</span>
+                    <span class="contact-card__label">Написать нам</span>
+                </div>
+                <span class="contact-card__arrow">→</span>
+            </a>
+
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/pryaniki.deserty/" target="_blank" rel="noopener"
+               class="contact-card" id="link-instagram"
+               onclick="incrementVisit('instagram')">
+                <div class="contact-card__icon contact-card__icon--instagram">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 01-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 017.8 2zm-.2 2A3.6 3.6 0 004 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 003.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6zm9.65 1.5a1.25 1.25 0 110 2.5 1.25 1.25 0 010-2.5zM12 7a5 5 0 110 10 5 5 0 010-10zm0 2a3 3 0 100 6 3 3 0 000-6z" fill="#E1306C"/>
+                    </svg>
+                </div>
+                <div class="contact-card__info">
+                    <span class="contact-card__name">Instagram</span>
+                    <span class="contact-card__label">Наши работы</span>
+                </div>
+                <span class="contact-card__arrow">→</span>
+            </a>
+
+            <!-- VK -->
+            <a href="https://vk.com/pryanikideserty" target="_blank" rel="noopener"
+               class="contact-card" id="link-vk"
+               onclick="incrementVisit('vk')">
+                <div class="contact-card__icon contact-card__icon--vk">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.785 16.241s.288-.032.436-.192c.136-.148.132-.427.132-.427s-.02-1.304.587-1.496c.598-.188 1.368 1.259 2.183 1.815.616.42 1.084.328 1.084.328l2.175-.03s1.14-.07.6-.964c-.044-.073-.315-.661-1.62-1.869-1.366-1.264-1.183-1.059.462-3.246.999-1.33 1.398-2.142 1.273-2.489-.12-.331-.856-.244-.856-.244l-2.451.015s-.182-.025-.317.056c-.131.079-.216.263-.216.263s-.387 1.03-.903 1.906c-1.088 1.848-1.524 1.946-1.702 1.832-.415-.266-.311-1.07-.311-1.641 0-1.784.271-2.527-.527-2.72-.265-.064-.46-.106-1.138-.113-.87-.009-1.606.003-2.023.207-.278.136-.492.439-.362.456.162.022.528.099.722.362.25.34.241 1.103.241 1.103s.144 2.098-.335 2.358c-.329.179-.78-.186-1.748-1.856-.495-.855-.87-1.8-.87-1.8s-.072-.176-.2-.271c-.155-.115-.371-.151-.371-.151l-2.328.015s-.35.01-.478.162c-.114.135-.009.414-.009.414s1.82 4.258 3.878 6.403c1.887 1.967 4.032 1.838 4.032 1.838h.972z" fill="#4583FF"/>
+                    </svg>
+                </div>
+                <div class="contact-card__info">
+                    <span class="contact-card__name">ВКонтакте</span>
+                    <span class="contact-card__label">Сообщество</span>
+                </div>
+                <span class="contact-card__arrow">→</span>
+            </a>
+
+            <!-- WhatsApp -->
+            <a href="https://wa.me/+79950304625" target="_blank" rel="noopener"
+               class="contact-card" id="link-whatsapp"
+               onclick="incrementVisit('whatsapp')">
+                <div class="contact-card__icon contact-card__icon--whatsapp">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.006 21.785h-.005a9.84 9.84 0 01-5.016-1.373l-.36-.214-3.73.978.996-3.638-.235-.374A9.86 9.86 0 012.16 12.01C2.16 6.576 6.573 2.163 12.01 2.163c2.638 0 5.117 1.028 6.983 2.895a9.825 9.825 0 012.893 6.994c-.003 5.434-4.416 9.848-9.88 9.848v-.115zm8.412-18.226A11.815 11.815 0 0012.006 0C5.442 0 .103 5.335.1 11.903a11.874 11.874 0 001.59 5.945L0 24l6.305-1.654a11.88 11.88 0 005.694 1.448h.005c6.56 0 11.9-5.335 11.903-11.903a11.827 11.827 0 00-3.489-8.43z" fill="#25D366"/>
+                    </svg>
+                </div>
+                <div class="contact-card__info">
+                    <span class="contact-card__name">WhatsApp</span>
+                    <span class="contact-card__label">Быстрая связь</span>
+                </div>
+                <span class="contact-card__arrow">→</span>
+            </a>
+
+        </div>
+
+        <!-- Phone -->
+        <div class="phone-block">
+            <a href="tel:+79950304625" class="phone-block__link" id="link-phone"
+               onclick="incrementVisit('phone')">
+                <span class="phone-block__icon">📞</span>
+                +7 995 030 46 25
             </a>
         </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p class="footer__text">
+                Сделано с <span class="footer__heart">♥</span> в пряничной мастерской
+            </p>
+        </footer>
+
     </div>
 
-    <script>
-        function incrementVisit(name) {
-            fetch('https://pryaniki-deserty.onrender.com/increment', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ name: name }),
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log('Статистика обновлена:', data);
-            })
-            .catch((error) => {
-                console.error('Ошибка при отправке запроса:', error);
-            });
-        }
-    </script>
+    <!-- Scripts -->
+    <script src="static/js/main.js"></script>
 </body>
 </html>

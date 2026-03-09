@@ -1,5 +1,5 @@
 # Используем официальный образ Python
-FROM python:3.9-slim
+FROM python:3.11-slim
 
 # Устанавливаем рабочую директорию
 WORKDIR /app
@@ -8,10 +8,10 @@ WORKDIR /app
 COPY . .
 
 # Устанавливаем зависимости
-RUN pip install -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Открываем порт для Flask-приложения
+# Открываем порт
 EXPOSE 5000
 
-# Указываем команду для запуска приложения
-CMD ["python", "app.py"]
+# Запуск через gunicorn
+CMD ["gunicorn", "--bind", "0.0.0.0:5000", "--workers", "2", "app:app"]
