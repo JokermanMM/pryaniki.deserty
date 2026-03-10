@@ -1,22 +1,22 @@
 /* ===== CSS Custom Properties ===== */
 :root {
-  --bg-dark: #1a1210;
-  --bg-card: rgba(42, 30, 24, 0.7);
-  --bg-card-hover: rgba(58, 42, 32, 0.85);
-  --glass-border: rgba(200, 160, 120, 0.15);
-  --glass-border-hover: rgba(218, 175, 130, 0.35);
-  --accent-gold: #d4a55a;
-  --accent-warm: #c47a4a;
-  --accent-soft: #e8c99b;
-  --text-primary: #f5ede4;
-  --text-secondary: rgba(245, 237, 228, 0.65);
-  --text-muted: rgba(245, 237, 228, 0.4);
-  --glow-gold: rgba(212, 165, 90, 0.3);
-  --glow-warm: rgba(196, 122, 74, 0.25);
-  --gradient-hero: linear-gradient(135deg, #1a1210 0%, #2a1e18 40%, #1e1614 100%);
+  --bg-light: #fdf6ee;
+  --bg-card: rgba(255, 255, 255, 0.55);
+  --bg-card-hover: rgba(255, 255, 255, 0.75);
+  --glass-border: rgba(180, 140, 100, 0.2);
+  --glass-border-hover: rgba(180, 140, 100, 0.4);
+  --accent-gold: #b8762e;
+  --accent-warm: #a05a2c;
+  --accent-soft: #d4a55a;
+  --text-primary: #3d2b1f;
+  --text-secondary: rgba(61, 43, 31, 0.65);
+  --text-muted: rgba(61, 43, 31, 0.4);
+  --glow-gold: rgba(184, 118, 46, 0.15);
+  --glow-warm: rgba(160, 90, 44, 0.12);
+  --gradient-hero: linear-gradient(135deg, #fdf6ee 0%, #f5e6d3 40%, #faf0e4 100%);
   --gradient-accent: linear-gradient(135deg, var(--accent-gold), var(--accent-warm));
-  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.4);
-  --shadow-card-hover: 0 12px 48px rgba(0, 0, 0, 0.5), 0 0 40px var(--glow-gold);
+  --shadow-card: 0 8px 32px rgba(100, 60, 20, 0.1);
+  --shadow-card-hover: 0 12px 48px rgba(100, 60, 20, 0.18), 0 0 40px var(--glow-gold);
   --radius-lg: 20px;
   --radius-md: 14px;
   --transition-smooth: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -39,6 +39,11 @@ html {
 body {
   font-family: 'Inter', sans-serif;
   background: var(--gradient-hero);
+  background-image: url('../img/gingerbread-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-blend-mode: soft-light;
   color: var(--text-primary);
   min-height: 100vh;
   overflow-x: hidden;
@@ -124,21 +129,21 @@ body {
 
 .glow-orb--1 {
   width: 400px; height: 400px;
-  background: radial-gradient(circle, var(--glow-gold), transparent 70%);
+  background: radial-gradient(circle, rgba(212, 165, 90, 0.12), transparent 70%);
   top: -100px; left: -100px;
   animation: orbDrift1 20s ease-in-out infinite;
 }
 
 .glow-orb--2 {
   width: 350px; height: 350px;
-  background: radial-gradient(circle, var(--glow-warm), transparent 70%);
+  background: radial-gradient(circle, rgba(196, 122, 74, 0.1), transparent 70%);
   bottom: -80px; right: -80px;
   animation: orbDrift2 25s ease-in-out infinite;
 }
 
 .glow-orb--3 {
   width: 250px; height: 250px;
-  background: radial-gradient(circle, rgba(232, 201, 155, 0.1), transparent 70%);
+  background: radial-gradient(circle, rgba(232, 201, 155, 0.08), transparent 70%);
   top: 50%; left: 50%;
   transform: translate(-50%, -50%);
   animation: orbPulse 15s ease-in-out infinite;
@@ -246,7 +251,7 @@ body {
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(212, 165, 90, 0.08),
+    rgba(184, 118, 46, 0.1),
     transparent
   );
   transition: left 0.6s ease;
@@ -395,7 +400,7 @@ body {
 
 .phone-block__link:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 30px var(--glow-gold);
+  box-shadow: 0 8px 32px rgba(100, 60, 20, 0.15), 0 0 30px var(--glow-gold);
   border-color: var(--accent-gold);
 }
 
