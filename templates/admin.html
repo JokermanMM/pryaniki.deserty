@@ -21,17 +21,21 @@
         <p class="admin-header__subtitle">Панель администратора</p>
     </header>
 
-    <!-- Period selector -->
-    <div class="period-selector">
-        <button class="period-btn period-btn--active" data-month="" onclick="selectPeriod(this)">
-            Всё время
+    <!-- Period dropdown -->
+    <div class="dropdown" id="period-dropdown">
+        <button class="dropdown__toggle" id="dropdown-toggle" onclick="toggleDropdown()">
+            <span class="dropdown__icon">📅</span>
+            <span class="dropdown__text" id="dropdown-text">Всё время</span>
+            <span class="dropdown__arrow" id="dropdown-arrow">▾</span>
         </button>
-        <!-- Monthly buttons will be injected here by JS -->
-        <div id="month-buttons"></div>
+        <div class="dropdown__menu" id="dropdown-menu">
+            <button class="dropdown__item dropdown__item--active" data-month="" onclick="selectPeriod(this)">
+                Всё время
+            </button>
+            <!-- Monthly items injected by JS -->
+            <div id="month-items"></div>
+        </div>
     </div>
-
-    <!-- Current period label -->
-    <div class="period-label" id="period-label">Период: всё время</div>
 
     <!-- Total visits -->
     <div class="stat-card--total">

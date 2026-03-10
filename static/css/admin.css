@@ -58,66 +58,141 @@ body {
   font-size: 0.95rem;
 }
 
-/* ===== Period Selector ===== */
-.period-selector {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 12px;
+/* ===== Period Dropdown ===== */
+.dropdown {
+  position: relative;
   width: 100%;
-  max-width: 500px;
+  max-width: 280px;
+  margin-bottom: 24px;
   animation: fadeIn 0.5s 0.05s ease-out both;
+  z-index: 10;
 }
 
-.period-selector #month-buttons {
+.dropdown__toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 14px 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  backdrop-filter: blur(16px);
+  color: var(--text-primary);
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    border-color var(--transition-smooth),
+    box-shadow var(--transition-smooth);
+}
+
+.dropdown__toggle:hover,
+.dropdown--open .dropdown__toggle {
+  border-color: var(--accent-gold);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown__icon {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.dropdown__text {
+  flex: 1;
+  text-align: left;
+}
+
+.dropdown__arrow {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  transition: transform 0.3s ease;
+}
+
+.dropdown__arrow--open {
+  transform: rotate(180deg);
+}
+
+/* Menu */
+.dropdown__menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  background: rgba(30, 22, 18, 0.95);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition:
+    max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.25s ease,
+    transform 0.25s ease;
+  pointer-events: none;
+}
+
+.dropdown__menu--open {
+  max-height: 320px;
+  overflow-y: auto;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Scrollbar */
+.dropdown__menu::-webkit-scrollbar {
+  width: 4px;
+}
+.dropdown__menu::-webkit-scrollbar-track {
+  background: transparent;
+}
+.dropdown__menu::-webkit-scrollbar-thumb {
+  background: var(--glass-border);
+  border-radius: 4px;
+}
+
+#month-items {
   display: contents;
 }
 
-.period-btn {
-  padding: 8px 18px;
-  border: 1px solid var(--glass-border);
-  border-radius: 50px;
-  background: var(--bg-card);
+.dropdown__item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 12px 20px;
+  background: transparent;
+  border: none;
   color: var(--text-secondary);
   font-family: 'Inter', sans-serif;
-  font-size: 0.82rem;
+  font-size: 0.9rem;
   font-weight: 500;
   cursor: pointer;
-  backdrop-filter: blur(16px);
+  text-align: left;
   transition:
-    background var(--transition-smooth),
-    color var(--transition-smooth),
-    border-color var(--transition-smooth),
-    transform var(--transition-smooth);
+    background 0.2s ease,
+    color 0.2s ease;
 }
 
-.period-btn:hover {
-  border-color: var(--accent-gold);
+.dropdown__item:hover {
+  background: rgba(212, 165, 90, 0.1);
   color: var(--text-primary);
-  transform: translateY(-1px);
 }
 
-.period-btn--active {
-  background: var(--gradient-accent);
-  background: linear-gradient(135deg, var(--accent-gold), var(--accent-warm));
-  color: #fff;
-  border-color: transparent;
+.dropdown__item--active {
+  color: var(--accent-gold);
+  font-weight: 600;
 }
 
-.period-btn--active:hover {
-  transform: translateY(-1px);
-}
-
-.period-label {
-  text-align: center;
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  margin-bottom: 20px;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  animation: fadeIn 0.5s 0.08s ease-out both;
+.dropdown__item--active::after {
+  content: '✓';
+  margin-left: auto;
+  font-size: 0.85rem;
+  color: var(--accent-gold);
 }
 
 /* ===== Stats Grid ===== */

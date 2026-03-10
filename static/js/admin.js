@@ -19,6 +19,7 @@ const MONTH_NAMES = {
 };
 
 let currentMonth = ''; // '' = all time
+let dropdownOpen = false;
 
 function getAdminKey() {
   const params = new URLSearchParams(window.location.search);
@@ -26,14 +27,46 @@ function getAdminKey() {
 }
 
 function formatMonth(monthStr) {
-  // "2026-03" -> "Март 2026"
   const [year, month] = monthStr.split('-');
   return `${MONTH_NAMES[month] || month} ${year}`;
 }
 
+// ===== Dropdown =====
+function toggleDropdown() {
+  dropdownOpen = !dropdownOpen;
+  const menu = document.getElementById('dropdown-menu');
+  const arrow = document.getElementById('dropdown-arrow');
+  const dropdown = document.getElementById('period-dropdown');
+
+  if (dropdownOpen) {
+    menu.classList.add('dropdown__menu--open');
+    arrow.classList.add('dropdown__arrow--open');
+    dropdown.classList.add('dropdown--open');
+  } else {
+    menu.classList.remove('dropdown__menu--open');
+    arrow.classList.remove('dropdown__arrow--open');
+    dropdown.classList.remove('dropdown--open');
+  }
+}
+
+function closeDropdown() {
+  dropdownOpen = false;
+  document.getElementById('dropdown-menu').classList.remove('dropdown__menu--open');
+  document.getElementById('dropdown-arrow').classList.remove('dropdown__arrow--open');
+  document.getElementById('period-dropdown').classList.remove('dropdown--open');
+}
+
+// Close dropdown when clicking outside
+document.addEventListener('click', (e) => {
+  const dropdown = document.getElementById('period-dropdown');
+  if (!dropdown.contains(e.target)) {
+    closeDropdown();
+  }
+});
+
 // ===== Load available months =====
 async function loadMonths() {
-  const container = document.getElementById('month-buttons');
+  const container = document.getElementById('month-items');
   try {
     const res = await fetch('/months');
     if (!res.ok) return;
@@ -41,8 +74,8 @@ async function loadMonths() {
 
     let html = '';
     for (const m of months) {
-      const active = m === currentMonth ? ' period-btn--active' : '';
-      html += `<button class="period-btn${active}" data-month="${m}" onclick="selectPeriod(this)">${formatMonth(m)}</button>`;
+      const active = m === currentMonth ? ' dropdown__item--active' : '';
+      html += `<button class="dropdown__item${active}" data-month="${m}" onclick="selectPeriod(this)">${formatMonth(m)}</button>`;
     }
     container.innerHTML = html;
   } catch (e) {
@@ -55,15 +88,15 @@ function selectPeriod(btn) {
   currentMonth = btn.dataset.month;
 
   // Update active state
-  document.querySelectorAll('.period-btn').forEach(b => b.classList.remove('period-btn--active'));
-  btn.classList.add('period-btn--active');
+  document.querySelectorAll('.dropdown__item').forEach(b => b.classList.remove('dropdown__item--active'));
+  btn.classList.add('dropdown__item--active');
 
-  // Update label
-  const label = document.getElementById('period-label');
-  label.textContent = currentMonth
-    ? `Период: ${formatMonth(currentMonth)}`
-    : 'Период: всё время';
+  // Update toggle text
+  document.getElementById('dropdown-text').textContent = currentMonth
+    ? formatMonth(currentMonth)
+    : 'Всё время';
 
+  closeDropdown();
   loadStats();
 }
 
@@ -82,11 +115,9 @@ async function loadStats() {
     if (!res.ok) throw new Error('Ошибка загрузки');
     const data = await res.json();
 
-    // Calculate page views
     const pageViews = data['page_view'] || 0;
     totalEl.textContent = pageViews;
 
-    // Build stat cards
     let html = '';
     const entries = Object.entries(data).sort((a, b) => b[1] - a[1]);
 
