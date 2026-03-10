@@ -6,6 +6,17 @@
     <title>Пряники & Десерты — Контакты</title>
     <meta name="description" content="Имбирные пряники и десерты ручной работы. Свяжитесь с нами через Telegram, Instagram, WhatsApp или закажите на Flowwow.">
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="static/img/favicon.png">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Пряники & Десерты">
+    <meta property="og:description" content="Сладкие подарки ручной работы 🍪 Имбирные пряники и десерты на заказ">
+    <meta property="og:image" content="https://pryaniki-deserty.onrender.com/static/img/gingerbread-bg.png">
+    <meta property="og:url" content="https://pryaniki-deserty.onrender.com/">
+    <meta property="og:locale" content="ru_RU">
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -136,6 +147,13 @@
                 <span class="phone-block__icon">📞</span>
                 +7 995 030 46 25
             </a>
+            <button class="copy-btn" id="copy-phone" onclick="copyPhone()" title="Скопировать номер">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                    <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/>
+                </svg>
+                <span class="copy-btn__tooltip" id="copy-tooltip">Скопировано!</span>
+            </button>
         </div>
 
         <!-- Footer -->

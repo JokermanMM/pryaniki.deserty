@@ -14,3 +14,12 @@ function incrementVisit(name) {
 document.addEventListener('DOMContentLoaded', () => {
   incrementVisit('page_view');
 });
+
+// ===== Copy phone number =====
+function copyPhone() {
+  navigator.clipboard.writeText('+79950304625').then(() => {
+    const tooltip = document.getElementById('copy-tooltip');
+    tooltip.classList.add('copy-btn__tooltip--visible');
+    setTimeout(() => tooltip.classList.remove('copy-btn__tooltip--visible'), 2000);
+  });
+}

@@ -368,7 +368,10 @@ body {
 
 /* ===== Phone Block ===== */
 .phone-block {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
   opacity: 0;
   animation: fadeInUp 0.6s 0.95s ease-out forwards;
   margin-bottom: 48px;
@@ -406,6 +409,71 @@ body {
 
 .phone-block__icon {
   font-size: 1.25rem;
+}
+
+/* Copy Button */
+.copy-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--glass-border);
+  border-radius: 50%;
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition:
+    transform var(--transition-smooth),
+    color var(--transition-smooth),
+    border-color var(--transition-smooth),
+    box-shadow var(--transition-smooth);
+}
+
+.copy-btn:hover {
+  color: var(--accent-gold);
+  border-color: var(--accent-gold);
+  transform: scale(1.1);
+  box-shadow: 0 4px 16px rgba(180, 118, 46, 0.15);
+}
+
+.copy-btn:active {
+  transform: scale(0.95);
+}
+
+.copy-btn__tooltip {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  padding: 6px 12px;
+  background: var(--accent-gold);
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border-radius: 8px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.copy-btn__tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: var(--accent-gold);
+}
+
+.copy-btn__tooltip--visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
 }
 
 /* ===== Footer ===== */
