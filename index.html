@@ -140,6 +140,85 @@
 
         </div>
 
+        <!-- Gallery Section -->
+        <section class="gallery-section" id="gallery">
+            <h2 class="gallery-section__title">Наши работы</h2>
+            <p class="gallery-section__subtitle">Каждый десерт — маленькое произведение искусства</p>
+
+            <!-- Category Tabs -->
+            <div class="gallery-tabs">
+                <button class="gallery-tab gallery-tab--active" data-category="all" onclick="filterGallery(this)">Все</button>
+                <button class="gallery-tab" data-category="pryaniki" onclick="filterGallery(this)">🍪 Пряники</button>
+                <button class="gallery-tab" data-category="bento" onclick="filterGallery(this)">🎂 Бенто-торты</button>
+                <button class="gallery-tab" data-category="strawberry" onclick="filterGallery(this)">🍓 Клубника</button>
+                <button class="gallery-tab" data-category="mochi" onclick="filterGallery(this)">🍡 Моти</button>
+                <button class="gallery-tab" data-category="zefir" onclick="filterGallery(this)">🌸 Зефир</button>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="gallery-grid" id="gallery-grid">
+                <div class="gallery-item" data-category="pryaniki" onclick="openLightbox(this)">
+                    <img src="static/img/gallery/pryaniki-1.jpg" alt="Пряник матрёшка" loading="lazy">
+                    <div class="gallery-item__overlay">
+                        <span class="gallery-item__label">Пряники</span>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="pryaniki" onclick="openLightbox(this)">
+                    <img src="static/img/gallery/pryaniki-2.jpg" alt="Пасхальные пряники" loading="lazy">
+                    <div class="gallery-item__overlay">
+                        <span class="gallery-item__label">Пряники</span>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="bento" onclick="openLightbox(this)">
+                    <img src="static/img/gallery/bento-1.jpg" alt="Бенто-торт с единорогом" loading="lazy">
+                    <div class="gallery-item__overlay">
+                        <span class="gallery-item__label">Бенто-торт</span>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="bento" onclick="openLightbox(this)">
+                    <img src="static/img/gallery/bento-2.jpg" alt="Бенто-торт Лучшая мама" loading="lazy">
+                    <div class="gallery-item__overlay">
+                        <span class="gallery-item__label">Бенто-торт</span>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="strawberry" onclick="openLightbox(this)">
+                    <img src="static/img/gallery/strawberry-1.jpg" alt="Клубника в шоколаде" loading="lazy">
+                    <div class="gallery-item__overlay">
+                        <span class="gallery-item__label">Клубника в шоколаде</span>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="strawberry" onclick="openLightbox(this)">
+                    <img src="static/img/gallery/strawberry-2.jpg" alt="Клубника с ягодами" loading="lazy">
+                    <div class="gallery-item__overlay">
+                        <span class="gallery-item__label">Клубника в шоколаде</span>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="mochi" onclick="openLightbox(this)">
+                    <img src="static/img/gallery/mochi-1.jpg" alt="Моти с цветами" loading="lazy">
+                    <div class="gallery-item__overlay">
+                        <span class="gallery-item__label">Моти</span>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="mochi" onclick="openLightbox(this)">
+                    <img src="static/img/gallery/mochi-2.jpg" alt="Моти в коробке" loading="lazy">
+                    <div class="gallery-item__overlay">
+                        <span class="gallery-item__label">Моти</span>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="zefir" onclick="openLightbox(this)">
+                    <img src="static/img/gallery/zefir-1.jpg" alt="Букет из зефира" loading="lazy">
+                    <div class="gallery-item__overlay">
+                        <span class="gallery-item__label">Зефир</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lightbox -->
+        <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+            <button class="lightbox__close" onclick="closeLightbox(event)">&times;</button>
+            <img class="lightbox__img" id="lightbox-img" src="" alt="">
+        </div>
         <!-- Phone -->
         <div class="phone-block">
             <a href="tel:+79950304625" class="phone-block__link" id="link-phone"
