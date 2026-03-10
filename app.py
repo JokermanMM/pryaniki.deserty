@@ -18,6 +18,12 @@ def index():
     return send_from_directory(os.getcwd(), 'index.html')
 
 
+# Health check for keep-alive pinging (prevents Render cold starts)
+@app.route('/health')
+def health():
+    return jsonify({"status": "ok"}), 200
+
+
 @app.route('/admin')
 def admin():
     key = request.args.get('key', '')
