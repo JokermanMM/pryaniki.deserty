@@ -1,5 +1,6 @@
 import os
 import redis
+from datetime import datetime
 from flask import Flask, request, jsonify, send_from_directory, render_template, abort
 
 app = Flask(__name__, static_folder='static', template_folder='templates')
@@ -25,24 +26,53 @@ def admin():
     return render_template('admin.html')
 
 
-# Increment click counter
+# Increment click counter (stores both total and monthly)
 @app.route('/increment', methods=['POST'])
 def increment():
     data = request.get_json()
     name = data.get('name')
 
     if name:
+        month = datetime.utcnow().strftime('%Y-%m')
+
+        # Total counters (backward compatible)
         r.incr(name)
         r.incr("main")
-        return jsonify({"message": f"Переход на {name} увеличен!", "visits": get_visits()}), 200
+
+        # Monthly counters
+        r.incr(f"{name}:{month}")
+        r.incr(f"main:{month}")
+
+        return jsonify({"message": f"Переход на {name} увеличен!"}), 200
     else:
         return jsonify({"message": "Неизвестный эндпоинт!"}), 400
 
 
-# Get statistics
+# Get statistics with optional month filter
 @app.route('/statistics', methods=['GET'])
 def statistics():
-    return jsonify(get_visits()), 200
+    month = request.args.get('month')  # e.g. "2026-03" or None for all-time
+
+    if month:
+        # Return monthly stats: keys matching "*:{month}"
+        pattern = f"*:{month}"
+        keys = r.keys(pattern)
+        result = {}
+        for key in keys:
+            base_name = key.rsplit(':', 1)[0]  # "telegram:2026-03" -> "telegram"
+            result[base_name] = int(r.get(key) or 0)
+        return jsonify(result), 200
+    else:
+        # All-time: return only keys without ":" (backward compatible)
+        return jsonify(get_visits()), 200
+
+
+# Get available months
+@app.route('/months', methods=['GET'])
+def get_months():
+    keys = r.keys('main:*')
+    months = sorted(set(k.split(':')[-1] for k in keys), reverse=True)
+    return jsonify(months), 200
 
 
 # Reset statistics (protected)
@@ -55,9 +85,9 @@ def reset():
     return jsonify({"message": "Статистика сброшена!"}), 200
 
 
-# Helper: get all Redis values
+# Helper: get all simple (non-monthly) values from Redis
 def get_visits():
-    keys = r.keys()
+    keys = [k for k in r.keys() if ':' not in k]
     return {key: int(r.get(key) or 0) for key in keys}
 
 

@@ -58,6 +58,68 @@ body {
   font-size: 0.95rem;
 }
 
+/* ===== Period Selector ===== */
+.period-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 12px;
+  width: 100%;
+  max-width: 500px;
+  animation: fadeIn 0.5s 0.05s ease-out both;
+}
+
+.period-selector #month-buttons {
+  display: contents;
+}
+
+.period-btn {
+  padding: 8px 18px;
+  border: 1px solid var(--glass-border);
+  border-radius: 50px;
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  cursor: pointer;
+  backdrop-filter: blur(16px);
+  transition:
+    background var(--transition-smooth),
+    color var(--transition-smooth),
+    border-color var(--transition-smooth),
+    transform var(--transition-smooth);
+}
+
+.period-btn:hover {
+  border-color: var(--accent-gold);
+  color: var(--text-primary);
+  transform: translateY(-1px);
+}
+
+.period-btn--active {
+  background: var(--gradient-accent);
+  background: linear-gradient(135deg, var(--accent-gold), var(--accent-warm));
+  color: #fff;
+  border-color: transparent;
+}
+
+.period-btn--active:hover {
+  transform: translateY(-1px);
+}
+
+.period-label {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  animation: fadeIn 0.5s 0.08s ease-out both;
+}
+
 /* ===== Stats Grid ===== */
 .stats-grid {
   display: grid;
