@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Пряники & Десерты — Контакты</title>
-    <meta name="description" content="Имбирные пряники и десерты ручной работы. Свяжитесь с нами через Telegram, Instagram, WhatsApp или закажите на Flowwow.">
+    <title>ПОВОД — Десерты с посланием</title>
+    <meta name="description" content="Десерты с посланием. Есть повод порадовать — закажите пряники, бенто-торты, моти и зефир ручной работы.">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="static/img/favicon.png">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Пряники & Десерты">
-    <meta property="og:description" content="Сладкие подарки ручной работы 🍪 Имбирные пряники и десерты на заказ">
+    <meta property="og:title" content="ПОВОД — Десерты с посланием">
+    <meta property="og:description" content="Десерты с посланием 🎀 Есть повод порадовать">
     <meta property="og:image" content="https://pryaniki-deserty.onrender.com/static/img/gingerbread-bg.png">
     <meta property="og:url" content="https://pryaniki-deserty.onrender.com/">
     <meta property="og:locale" content="ru_RU">
@@ -20,36 +20,51 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Outfit:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 
     <!-- Styles -->
     <link rel="stylesheet" href="static/css/style.css">
 </head>
 <body>
 
-    <!-- Ambient Background -->
-    <div class="bg-particles">
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
+    <!-- Decorative background elements -->
+    <div class="bg-deco">
+        <div class="bg-deco__orb bg-deco__orb--1"></div>
+        <div class="bg-deco__orb bg-deco__orb--2"></div>
+        <div class="bg-deco__orb bg-deco__orb--3"></div>
     </div>
-    <div class="glow-orb glow-orb--1"></div>
-    <div class="glow-orb glow-orb--2"></div>
-    <div class="glow-orb glow-orb--3"></div>
 
     <!-- Main Content -->
     <div class="main-wrapper">
 
         <!-- Hero -->
         <header class="hero">
-            <div class="hero__icon">🍪</div>
-            <h1 class="hero__title">Пряники & Десерты</h1>
-            <p class="hero__subtitle">Сладкие подарки ручной работы</p>
+            <!-- Decorative top line with heart -->
+            <div class="hero__ornament">
+                <span class="hero__line"></span>
+                <svg class="hero__heart" width="22" height="20" viewBox="0 0 22 20" fill="none">
+                    <path d="M11 19C11 19 1 12 1 5.5C1 3 3 1 5.5 1C7.5 1 9.5 2.5 11 4C12.5 2.5 14.5 1 16.5 1C19 1 21 3 21 5.5C21 12 11 19 11 19Z" stroke="#8B2635" stroke-width="1.5" fill="none"/>
+                </svg>
+                <span class="hero__line"></span>
+            </div>
+
+            <h1 class="hero__title">ПОВОД</h1>
+            <p class="hero__tagline">ДЕСЕРТЫ С ПОСЛАНИЕМ</p>
+
+            <!-- Bow ornament -->
+            <div class="hero__bow-wrap">
+                <span class="hero__line hero__line--short"></span>
+                <svg class="hero__bow" width="48" height="28" viewBox="0 0 48 28" fill="none">
+                    <path d="M24 14 C18 8, 4 4, 2 10 C0 16, 12 18, 24 14Z" fill="#9B3A4A" opacity="0.85"/>
+                    <path d="M24 14 C30 8, 44 4, 46 10 C48 16, 36 18, 24 14Z" fill="#9B3A4A" opacity="0.85"/>
+                    <path d="M24 14 C18 20, 4 24, 2 18 C0 12, 12 10, 24 14Z" fill="#7a2d3a" opacity="0.75"/>
+                    <path d="M24 14 C30 20, 44 24, 46 18 C48 12, 36 10, 24 14Z" fill="#7a2d3a" opacity="0.75"/>
+                    <circle cx="24" cy="14" r="3" fill="#c0687a"/>
+                </svg>
+                <span class="hero__line hero__line--short"></span>
+            </div>
+
+            <p class="hero__slogan"><em>Есть повод порадовать</em></p>
         </header>
 
         <!-- Contact Cards -->
@@ -61,8 +76,8 @@
                onclick="incrementVisit('Flowwow')">
                 <div class="contact-card__icon contact-card__icon--flowwow">
                     <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M11.5 4C11.5 4 8 7 8 11.5C8 14.5 9.5 16 11.5 17C11.5 17 11.5 17 11.5 17L11.5 17C10 14.5 10.5 11 13 8.5C13 8.5 13 12 14.5 14.5C14.5 14.5 15 11 13.5 7.5C13.5 7.5 12.5 5 11.5 4Z" fill="#FF6B6B"/>
-                        <path d="M20.5 4C20.5 4 24 7 24 11.5C24 14.5 22.5 16 20.5 17C20.5 17 20.5 17 20.5 17L20.5 17C22 14.5 21.5 11 19 8.5C19 8.5 19 12 17.5 14.5C17.5 14.5 17 11 18.5 7.5C18.5 7.5 19.5 5 20.5 4Z" fill="#FF6B6B"/>
+                        <path d="M11.5 4C11.5 4 8 7 8 11.5C8 14.5 9.5 16 11.5 17L11.5 17C10 14.5 10.5 11 13 8.5C13 8.5 13 12 14.5 14.5C14.5 14.5 15 11 13.5 7.5C13.5 7.5 12.5 5 11.5 4Z" fill="#FF6B6B"/>
+                        <path d="M20.5 4C20.5 4 24 7 24 11.5C24 14.5 22.5 16 20.5 17L20.5 17C22 14.5 21.5 11 19 8.5C19 8.5 19 12 17.5 14.5C17.5 14.5 17 11 18.5 7.5C18.5 7.5 19.5 5 20.5 4Z" fill="#FF6B6B"/>
                         <path d="M16 10C16 10 12 13.5 12 17C12 19.5 13.5 21 16 21C18.5 21 20 19.5 20 17C20 13.5 16 10 16 10Z" fill="#FF6B6B"/>
                         <path d="M15.25 19C15.25 19 15.25 24 15.25 28C15.25 28.414 15.586 28.75 16 28.75C16.414 28.75 16.75 28.414 16.75 28C16.75 24 16.75 19 16.75 19" fill="#FF6B6B"/>
                     </svg>
@@ -91,7 +106,7 @@
             </a>
 
             <!-- Instagram -->
-            <a href="https://www.instagram.com/pryaniki.deserty/" target="_blank" rel="noopener"
+            <a href="https://www.instagram.com/povod.dessert?igsh=MXhzOHAxbXIzcTU0cg==" target="_blank" rel="noopener"
                class="contact-card" id="link-instagram"
                onclick="incrementVisit('instagram')">
                 <div class="contact-card__icon contact-card__icon--instagram">
@@ -107,7 +122,7 @@
             </a>
 
             <!-- VK -->
-            <a href="https://vk.com/pryanikideserty" target="_blank" rel="noopener"
+            <a href="https://vk.ru/povod.dessert" target="_blank" rel="noopener"
                class="contact-card" id="link-vk"
                onclick="incrementVisit('vk')">
                 <div class="contact-card__icon contact-card__icon--vk">
@@ -138,78 +153,81 @@
                 <span class="contact-card__arrow">→</span>
             </a>
 
+            <!-- MAX -->
+            <a href="https://max.ru/join/-p-8k31PhdMd-LAWYjfTXeMJKLoxxsoPrShTKxrBDic" target="_blank" rel="noopener"
+               class="contact-card" id="link-max"
+               onclick="incrementVisit('max')">
+                <div class="contact-card__icon contact-card__icon--max">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="24" height="24" rx="6" fill="#FF4D00"/>
+                        <text x="12" y="16.5" text-anchor="middle" font-family="Arial Black, sans-serif" font-weight="900" font-size="9.5" fill="white" letter-spacing="-0.5">MAX</text>
+                    </svg>
+                </div>
+                <div class="contact-card__info">
+                    <span class="contact-card__name">MAX</span>
+                    <span class="contact-card__label">Мы в MAX</span>
+                </div>
+                <span class="contact-card__arrow">→</span>
+            </a>
+
         </div>
 
         <!-- Gallery Section -->
         <section class="gallery-section" id="gallery">
-            <h2 class="gallery-section__title">Наши работы</h2>
+            <div class="gallery-section__header">
+                <span class="gallery-section__line"></span>
+                <h2 class="gallery-section__title">Наши работы</h2>
+                <span class="gallery-section__line"></span>
+            </div>
             <p class="gallery-section__subtitle">Каждый десерт — маленькое произведение искусства</p>
 
             <!-- Category Tabs -->
             <div class="gallery-tabs">
                 <button class="gallery-tab gallery-tab--active" data-category="all" onclick="filterGallery(this)">Все</button>
-                <button class="gallery-tab" data-category="pryaniki" onclick="filterGallery(this)">🍪 Пряники</button>
-                <button class="gallery-tab" data-category="bento" onclick="filterGallery(this)">🎂 Бенто-торты</button>
-                <button class="gallery-tab" data-category="strawberry" onclick="filterGallery(this)">🍓 Клубника</button>
-                <button class="gallery-tab" data-category="mochi" onclick="filterGallery(this)">🍡 Моти</button>
-                <button class="gallery-tab" data-category="zefir" onclick="filterGallery(this)">🌸 Зефир</button>
+                <button class="gallery-tab" data-category="pryaniki" onclick="filterGallery(this)">Пряники</button>
+                <button class="gallery-tab" data-category="bento" onclick="filterGallery(this)">Бенто-торты</button>
+                <button class="gallery-tab" data-category="strawberry" onclick="filterGallery(this)">Клубника</button>
+                <button class="gallery-tab" data-category="mochi" onclick="filterGallery(this)">Моти</button>
+                <button class="gallery-tab" data-category="zefir" onclick="filterGallery(this)">Зефир</button>
             </div>
 
             <!-- Gallery Grid -->
             <div class="gallery-grid" id="gallery-grid">
                 <div class="gallery-item" data-category="pryaniki" onclick="openLightbox(this)">
                     <img src="static/img/gallery/pryaniki-1.jpg" alt="Пряник матрёшка" loading="lazy">
-                    <div class="gallery-item__overlay">
-                        <span class="gallery-item__label">Пряники</span>
-                    </div>
+                    <div class="gallery-item__overlay"><span class="gallery-item__label">Пряники</span></div>
                 </div>
                 <div class="gallery-item" data-category="pryaniki" onclick="openLightbox(this)">
                     <img src="static/img/gallery/pryaniki-2.jpg" alt="Пасхальные пряники" loading="lazy">
-                    <div class="gallery-item__overlay">
-                        <span class="gallery-item__label">Пряники</span>
-                    </div>
+                    <div class="gallery-item__overlay"><span class="gallery-item__label">Пряники</span></div>
                 </div>
                 <div class="gallery-item" data-category="bento" onclick="openLightbox(this)">
                     <img src="static/img/gallery/bento-1.jpg" alt="Бенто-торт с единорогом" loading="lazy">
-                    <div class="gallery-item__overlay">
-                        <span class="gallery-item__label">Бенто-торт</span>
-                    </div>
+                    <div class="gallery-item__overlay"><span class="gallery-item__label">Бенто-торт</span></div>
                 </div>
                 <div class="gallery-item" data-category="bento" onclick="openLightbox(this)">
                     <img src="static/img/gallery/bento-2.jpg" alt="Бенто-торт Лучшая мама" loading="lazy">
-                    <div class="gallery-item__overlay">
-                        <span class="gallery-item__label">Бенто-торт</span>
-                    </div>
+                    <div class="gallery-item__overlay"><span class="gallery-item__label">Бенто-торт</span></div>
                 </div>
                 <div class="gallery-item" data-category="strawberry" onclick="openLightbox(this)">
                     <img src="static/img/gallery/strawberry-1.jpg" alt="Клубника в шоколаде" loading="lazy">
-                    <div class="gallery-item__overlay">
-                        <span class="gallery-item__label">Клубника в шоколаде</span>
-                    </div>
+                    <div class="gallery-item__overlay"><span class="gallery-item__label">Клубника</span></div>
                 </div>
                 <div class="gallery-item" data-category="strawberry" onclick="openLightbox(this)">
                     <img src="static/img/gallery/strawberry-2.jpg" alt="Клубника с ягодами" loading="lazy">
-                    <div class="gallery-item__overlay">
-                        <span class="gallery-item__label">Клубника в шоколаде</span>
-                    </div>
+                    <div class="gallery-item__overlay"><span class="gallery-item__label">Клубника</span></div>
                 </div>
                 <div class="gallery-item" data-category="mochi" onclick="openLightbox(this)">
                     <img src="static/img/gallery/mochi-1.jpg" alt="Моти с цветами" loading="lazy">
-                    <div class="gallery-item__overlay">
-                        <span class="gallery-item__label">Моти</span>
-                    </div>
+                    <div class="gallery-item__overlay"><span class="gallery-item__label">Моти</span></div>
                 </div>
                 <div class="gallery-item" data-category="mochi" onclick="openLightbox(this)">
                     <img src="static/img/gallery/mochi-2.jpg" alt="Моти в коробке" loading="lazy">
-                    <div class="gallery-item__overlay">
-                        <span class="gallery-item__label">Моти</span>
-                    </div>
+                    <div class="gallery-item__overlay"><span class="gallery-item__label">Моти</span></div>
                 </div>
                 <div class="gallery-item" data-category="zefir" onclick="openLightbox(this)">
                     <img src="static/img/gallery/zefir-1.jpg" alt="Букет из зефира" loading="lazy">
-                    <div class="gallery-item__overlay">
-                        <span class="gallery-item__label">Зефир</span>
-                    </div>
+                    <div class="gallery-item__overlay"><span class="gallery-item__label">Зефир</span></div>
                 </div>
             </div>
         </section>
@@ -219,6 +237,7 @@
             <button class="lightbox__close" onclick="closeLightbox(event)">&times;</button>
             <img class="lightbox__img" id="lightbox-img" src="" alt="">
         </div>
+
         <!-- Phone -->
         <div class="phone-block">
             <a href="tel:+79950304625" class="phone-block__link" id="link-phone"
@@ -238,7 +257,7 @@
         <!-- Footer -->
         <footer class="footer">
             <p class="footer__text">
-                Сделано с <span class="footer__heart">♥</span> в пряничной мастерской
+                Сделано с <span class="footer__heart">♥</span> в мастерской ПОВОД
             </p>
         </footer>
 

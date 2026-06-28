@@ -8,6 +8,7 @@ const KNOWN_CONTACTS = {
   instagram: '📸 Instagram',
   vk: '💬 ВКонтакте',
   whatsapp: '📱 WhatsApp',
+  max: '🟠 MAX',
   phone: '📞 Телефон',
 };
 
